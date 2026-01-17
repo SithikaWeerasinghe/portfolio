@@ -7,7 +7,7 @@ The portfolio highlights my experience in **frontend development**, **React**, a
 ---
 
 ## 🔗 Live Website
-👉 **View Portfolio:** https://<your-github-username>.github.io/<repo-name>/
+👉 **View Portfolio:** (https://SithikaWeerasinghe.github.io/portfolio/)
 
 ---
 
