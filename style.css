@@ -1081,3 +1081,51 @@ input[type="email"]:invalid {
         grid-template-columns: 1fr;
     }
 }
+.project-actions{
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.btn.primary{
+  background: #6c63ff;
+  color: white;
+  border: 1px solid #6c63ff;
+}
+
+.btn.outline{
+  background: transparent;
+  color: #cfcfff;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+.tech-tags{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.tech-tags span{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.85);
+}
