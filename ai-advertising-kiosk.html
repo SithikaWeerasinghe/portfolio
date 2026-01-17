@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Based Smart Advertising Kiosk | Full Article</title>
+  <link rel="icon" type="Image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo"><h1>MyPortfolio</h1></div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-toggle"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+
+      <section class="page-header">
+        <h1>AI-Based Smart Advertising Kiosk</h1>
+        <p>Published: September 28, 2025 • 4 min read • Category: Computer Vision / IoT / Full-Stack</p>
+      </section>
+
+      <section class="blog-section">
+        <article class="blog-post">
+          <div class="post-content">
+
+            <h3>Overview</h3>
+            <p>
+              This project proposes a smart advertising kiosk built on a <strong>Raspberry Pi 5 (16GB)</strong>.
+              The kiosk detects people in front of the screen, estimates their <strong>age group</strong> and <strong>gender</strong>,
+              and then selects the most relevant advertisement in real-time using rule-based decision logic.
+            </p>
+
+            <h3>Core Problem</h3>
+            <p>
+              Traditional digital signage shows the same ads to everyone. This project improves relevance by adapting content
+              to the audience in front of the kiosk — while still being lightweight enough to run fully on-device.
+            </p>
+
+            <h3>How It Works</h3>
+            <p><strong>1) User Detection & Analysis</strong></p>
+            <ul style="color: var(--text-secondary); margin-left: 1.2rem; margin-bottom: 1rem;">
+              <li>Camera captures frames continuously (about 10–15 FPS is enough).</li>
+              <li>Faces are detected and each face is classified into an age group (e.g., 12–17, 18–24, 25–34, 35–50, 50+).</li>
+              <li>Gender is estimated (male/female; can be extended to “unknown”).</li>
+            </ul>
+
+            <p><strong>2) Attention Tracking (Single User Only)</strong></p>
+            <ul style="color: var(--text-secondary); margin-left: 1.2rem; margin-bottom: 1rem;">
+              <li>If exactly one user is detected, the system tracks attention using head pose / face landmarks.</li>
+              <li>If attention drops for a few seconds, the kiosk triggers a re-engagement response (avatar animation or short voice line).</li>
+            </ul>
+
+            <p><strong>3) Ad Selection & Decision Logic</strong></p>
+            <ul style="color: var(--text-secondary); margin-left: 1.2rem; margin-bottom: 1rem;">
+              <li>If multiple users exist, the kiosk selects the dominant age group (most users).</li>
+              <li>If there’s a tie, it breaks the tie using a buying-power rule (e.g., older groups may win).</li>
+              <li>Gender is only used when it is reliable (single user or same gender within selected group).</li>
+              <li>The system queries an ads database (SQLite) and displays the best match.</li>
+            </ul>
+
+            <h3>AI Avatar & Voice Interaction</h3>
+            <p>
+              The kiosk includes a voice-enabled AI avatar that can wake up with a phrase like <strong>“Hey Adorix”</strong>.
+              A 2D avatar is recommended for performance on Raspberry Pi, with 3D listed as future work.
+            </p>
+
+            <h3>Tech Stack (Planned)</h3>
+            <ul style="color: var(--text-secondary); margin-left: 1.2rem; margin-bottom: 1rem;">
+              <li><strong>Backend:</strong> Python (OpenCV), TFLite/ONNX runtime, Flask/FastAPI</li>
+              <li><strong>Frontend UI:</strong> HTML/CSS/JavaScript (full-screen kiosk in Chromium)</li>
+              <li><strong>Database:</strong> SQLite (ads, products, logs)</li>
+              <li><strong>Optional Voice:</strong> Vosk (offline STT), eSpeak/PicoTTS (offline TTS)</li>
+            </ul>
+
+            <h3>Challenges & Ethics</h3>
+            <ul style="color: var(--text-secondary); margin-left: 1.2rem; margin-bottom: 1rem;">
+              <li><strong>Performance vs accuracy:</strong> lightweight models are needed on-device.</li>
+              <li><strong>Lighting & angles:</strong> real-world kiosk environments affect detection.</li>
+              <li><strong>Privacy:</strong> avoid saving face images; keep processing on-device where possible.</li>
+              <li><strong>Voice reliability:</strong> background noise can reduce speech accuracy.</li>
+            </ul>
+
+            <h3>Future Enhancements</h3>
+            <ul style="color: var(--text-secondary); margin-left: 1.2rem; margin-bottom: 1rem;">
+              <li>Upgrade from 2D to advanced 3D avatar (stronger hardware required).</li>
+              <li>Cloud dashboard for analytics (impressions, demographics, engagement).</li>
+              <li>Multi-language support and better accessibility.</li>
+              <li>More advanced ad selection using ML (optional).</li>
+            </ul>
+
+            <p>
+              This idea and architecture is based on a full project plan designed specifically to run on Raspberry Pi 5,
+              including module breakdown, decision rules, database structure, and deployment approach.
+            </p>
+
+          </div>
+
+          <footer class="post-footer">
+            <a href="projects.html" class="read-more">← Back to Projects</a>
+          </footer>
+        </article>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Info</h4>
+        <ul>
+          <li><a href="mailto:sithikaweerasinghe2005@gmail.com">sithikaweerasinghe2005@gmail.com</a></li>
+          <li><a href="tel:+94705133255">+94 70 51 33 255</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Me</h4>
+        <ul>
+          <li><a href="https://github.com/Sunna05" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/sithika-weerasingha-8267182b0/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/coffeforurhed/?hl=en" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 Sithika Weerasinghe. All rights reserved.</p>
+  </footer>
+</body>
+</html>
